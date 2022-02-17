@@ -2,7 +2,15 @@ from django.contrib.auth import authenticate
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
 from authentication.serializers import RegisterSerializer, LoginSerializer
-from rest_framework import response, status
+from rest_framework import response, status, permissions
+
+class AuthUserAPIView(GenericAPIView): # класс для авторизации юзера через токен
+    permission_classes = (permissions.IsAuthenticated, )
+
+    def get(self, request):
+        user = request.user
+        serializer = RegisterSerializer(user)
+        return response.Response({'user': serializer.data})
 
 
 class RegisterAPIView(GenericAPIView): # cоздаем класс для регистрации Апишки
