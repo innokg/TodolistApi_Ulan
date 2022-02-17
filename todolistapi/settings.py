@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
 
     #myapps
     'authentication',
@@ -113,7 +114,8 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'authentication.jwt.JWTAuthentication',
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': "rest_framework.pagination",
 }
 
 # Internationalization
