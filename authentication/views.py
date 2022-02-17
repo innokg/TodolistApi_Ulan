@@ -14,6 +14,7 @@ class AuthUserAPIView(GenericAPIView): # класс для авторизаци�
 
 
 class RegisterAPIView(GenericAPIView): # cоздаем класс для регистрации Апишки
+    authentication_classes = []
 
     serializer_class = RegisterSerializer
 
