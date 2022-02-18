@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #myapps
     'authentication',
     'todos',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
